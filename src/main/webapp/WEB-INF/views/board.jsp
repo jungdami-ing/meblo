@@ -24,6 +24,9 @@
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index">Home</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="board">게시판</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li> -->
+                        <!-- <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li> -->
                     </ul>
                 </div>
             </div>
@@ -58,7 +61,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                	<c:forEach var="board" items="${boardList }">
+                                   <c:forEach var="board" items="${boardList }">
                                     <tr>
                                     <td scope="row">${board.idx }</td>
                                     <td><a href="/board/${board.idx }">${board.title }</a></td>
@@ -66,15 +69,46 @@
                                     <td>${board.count }</td>
                                     <td>${board.name }</td>
                                     </tr>
-                                	</c:forEach>
+                                   </c:forEach>
                                 </tbody>
                             </table>
-                                <button class="btn btn-primary boardList-footer" type="button" >글쓰기</button>
+                                <button class="btn btn-primary boardList-footer" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기</button>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                <form action="/meblo/board" method="post">
+                    <div class="modal-header">
+                    <input type="text" class="form-control" id="title" name="title" required="required" style="width:100%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="제목"/>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                        <textarea class="form-control" id="content" name="content" cols="30" rows="10" required="required" style="width:100%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="내용"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <input type="text" class="form-control" id="name" name="name" required="required" style="width:50%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="이름"/>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="submit" class="btn btn-primary">저장</button>
+                </div>
+                </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
+
+            myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+            })
+        </script>
+
 
 
         <!-- Footer-->

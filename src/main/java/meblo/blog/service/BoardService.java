@@ -13,12 +13,17 @@ import meblo.blog.repository.BoardRepository;
 @RequiredArgsConstructor
 public class BoardService {
 
-	@Autowired
-	private final BoardRepository boardRepository;
+   @Autowired
+   private final BoardRepository boardRepository;
 
-	public List<Board> findAll(){
-		List<Board> boardList = boardRepository.findAll();
-		return boardList;
-	}
+   public List<Board> findAll(){
+      List<Board> boardList = boardRepository.findAll();
+      return boardList;
+   }
+
+   public void writeBoard(Board board) {
+      boardRepository.save(board);
+   }
+
 
 }
