@@ -31,6 +31,8 @@ public class BoardService {
 	   return boardOne;
    }
 
-
+   public void deleteOne(int idx) {
+	   boardRepository.deleteById(idx);
+   }
 
 }

@@ -16,6 +16,18 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+    $(function(){
+  	  $('#deleteBoard').click(function(){
+  		var result = confirm("삭제하시겠습니까?");
+  		if(result){
+  			location.href = "delete${boardOne.idx}";
+  		}
+  	  });
+  	});
+
+    </script>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -61,7 +73,7 @@
 		                       </div>
 		                       <div class="board-footer">
 
-		                         <button type="button" class="btn btn-primary update-btn" onclick="'">수정</button>
+		                         <button type="button" class="btn btn-primary update-btn" onclick="">수정</button>
 		                            <button type="button" class="btn btn-danger delete-btn" id="deleteBoard">삭제</button>
 		                         <button type="button" class="btn btn-primary list-btn" onclick="location.href='/meblo/board' ">뒤로</button>
 		                       </div>

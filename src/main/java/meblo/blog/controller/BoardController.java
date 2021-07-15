@@ -49,4 +49,13 @@ public class BoardController {
 	   return mav;
    }
 
+   @GetMapping("/deleteBoard{idx}")
+   public ModelAndView deleteBoard(@PathVariable int idx) {
+	   boardService.deleteOne(idx);
+	   List<Board> boardList = boardService.findAll();
+	   ModelAndView mav = new ModelAndView("board");
+	   mav.addObject("boardList", boardList);
+	   return mav;
+   }
+
 }
