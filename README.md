@@ -19,14 +19,14 @@
 
 ## 개발 진행 로그
 
-#### 2021.07.13.수
+#### 2021.07.13.화
 - 개발환경 세팅
 - 스프링부트 프로젝트 생성
 - MySQL 사용자 / DB 생성
 - 깃 세팅
 
 
-#### 2021.07.14.목
+#### 2021.07.14.수
 - 메인(인덱스) 페이지 추가
 <img src = "https://user-images.githubusercontent.com/81821511/125618691-717c8a99-ac64-45a1-bd71-a2a1f2f8c635.png" width="30%" height="30%">
 
@@ -43,3 +43,10 @@
 <img src = "https://user-images.githubusercontent.com/81821511/125632904-c5baf9f2-8c35-47bd-ac41-9ffcf4b2fa80.png" width="90%" height="90%">
 
 
+
+#### 2021.07.15.목
+- 게시판 글 상세 보기 기능 구현
+<img src = "https://user-images.githubusercontent.com/81821511/125802962-f67db0db-134c-4eae-9f53-4fdb9f7a8ac0.png" width="30%" height="30%">
+
+- 게시판 글 삭제 기능 구현
+<img src = "https://user-images.githubusercontent.com/81821511/125803682-05a64ce2-a00f-452d-9aff-6b257d84a489.png" width="90%" height="90%">
