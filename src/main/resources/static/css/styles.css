@@ -10812,3 +10812,44 @@ header.masthead .site-heading .h1 {
     font-size: 2.25rem;
   }
 }
+
+
+
+.board-container{
+  border-top: 0.2em solid gray;
+  border-bottom: 0.2em solid gray;
+}
+
+.board-title{
+  font-weight: 700;
+}
+.board-container{
+  border-top: 0.2em solid gray;
+  border-bottom: 0.2em solid gray;
+}
+
+.content-title{
+  font-weight: 700;
+}
+.content{
+  padding: 10px 5px 5px 10px;
+}
+
+.content-title{
+    font-weight: 700;
+    display: block;
+  }
+  .content{
+    margin: 1.1em 0.7em;
+  }
+  .boardList-footer{
+  	float:right;
+  }
+  .board-footer{
+    float: right;
+    margin: 1.5rem 1rem;
+  }
+
+  .title-group{
+  margin : 0.7em 0;
+}

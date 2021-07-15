@@ -1,6 +1,7 @@
 package meblo.blog.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public class BoardService {
    public void writeBoard(Board board) {
       boardRepository.save(board);
    }
+
+   public Optional<Board> findOne(int idx) {
+	   Optional<Board> boardOne = boardRepository.findById(idx);
+	   return boardOne;
+   }
+
 
 
 }

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.AllArgsConstructor;
@@ -36,6 +37,8 @@ public class Board {
 	@CreationTimestamp
 	private Timestamp writeDate;
 
+	@ColumnDefault("0")
+	@Column
 	private int count;
 
 	@Column(nullable = false, length = 50)

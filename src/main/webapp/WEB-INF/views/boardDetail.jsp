@@ -42,71 +42,33 @@
                 </div>
             </div>
         </header>
-        <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                        <div class="container List-container" >
-                            <div class="mt-3">
-                                <table class="table text-center table-hover">
-                                <thead class="primary table-primary">
-                                    <tr>
-                                    <th scope="col">글번호</th>
-                                    <th scope="col">제목</th>
-                                    <th scope="col">작성일</th>
-                                    <th scope="col">조회수</th>
-                                    <th scope="col">이름</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                   <c:forEach var="board" items="${boardList }">
-                                    <tr>
-                                    <td scope="row">${board.idx }</td>
-                                    <td><a href="boardDetail${board.idx }" >${board.title }</a></td>
-                                    <td><fmt:formatDate value="${board.writeDate }" pattern="yy/MM/dd"/></td>
-                                    <td>${board.count }</td>
-                                    <td>${board.name }</td>
-                                    </tr>
-                                   </c:forEach>
-                                </tbody>
-                            </table>
-                                <button class="btn btn-primary boardList-footer" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">글쓰기</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
+		<!-- Main Content-->
+		        <main class="mb-4">
+		            <div class="container px-4 px-lg-5">
+		                <div class="row gx-4 gx-lg-5 justify-content-center">
+		                        <div class="container List-container">
+		                       <div class="row mt-1 header">
+		                         <h5 class="col-1 board-title">제목</h5>
+		                         <p class="col-8" style="word-break:break-all;">${boardOne.title}</p>
+		                         <p class="col-2"> <fmt:formatDate value="${boardOne.writeDate}" pattern="yy/MM/dd HH:mm"/></p>
+		                         <p class="col-1">${boardOne.count}</p>
+		                       </div>
+		                       <div class="board-container">
+		                         <h5 class="content-title">내용</h5>
+		                           <p class="content" style="word-break:break-all;">
+		                             ${boardOne.content}
+		                           </p>
+		                       </div>
+		                       <div class="board-footer">
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                <form action="/meblo/board" method="post">
-                    <div class="modal-header">
-                    <input type="text" class="form-control" id="title" name="title" required="required" style="width:100%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="제목"/>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                        <textarea class="form-control" id="content" name="content" cols="30" rows="10" required="required" style="width:100%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="내용"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <input type="text" class="form-control" id="name" name="name" required="required" style="width:50%; border:none;border-right:0px; border-top:0px; boder-left:0px; boder-bottom:0px;" placeholder="이름"/>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-                    <button type="submit" class="btn btn-primary">저장</button>
-                </div>
-                </form>
-                </div>
-            </div>
-        </div>
-        <script>
-            var myModal = document.getElementById('myModal')
-            var myInput = document.getElementById('myInput')
-
-            myModal.addEventListener('shown.bs.modal', function () {
-            myInput.focus()
-            })
-        </script>
-
+		                         <button type="button" class="btn btn-primary update-btn" onclick="'">수정</button>
+		                            <button type="button" class="btn btn-danger delete-btn" id="deleteBoard">삭제</button>
+		                         <button type="button" class="btn btn-primary list-btn" onclick="location.href='/meblo/board' ">뒤로</button>
+		                       </div>
+		                     </div>
+		                </div>
+		            </div>
+		        </main>
 
 
         <!-- Footer-->
@@ -154,5 +116,6 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
     </body>
 </html>
